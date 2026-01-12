@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use '@angular/material' as mat;
+
+// 1) Core de Material
+@include mat.core();
+
+// 2) Definir el tema (Material 18+, M3)
+//    Usamos paletas que sí existen en M3: $red-palette, $cyan-palette, etc.
+$rodando-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$red-palette,   // color de marca
+    tertiary: mat.$cyan-palette, // para acentos (opcional, puedes cambiarlo)
+  ),
+  density: (
+    scale: 0,
+  ),
+));
+
+// 3) Aplicar el tema y exponer variables CSS para tu layout
+:root {
+  @include mat.all-component-themes($rodando-theme);
+
+  /* Colores base derivados del tema */
+  --app-primary: #{mat.get-theme-color($rodando-theme, primary)};
+  --app-on-primary: #{mat.get-theme-color($rodando-theme, on-primary)};
+
+  /* Si quieres usar colores de superficie del tema */
+  --app-surface: #{mat.get-theme-color($rodando-theme, surface)};
+  --app-on-surface: #{mat.get-theme-color($rodando-theme, on-surface)};
+
+  /* Versiones “soft” del primary para hover/fondos */
+  --app-primary-soft: color-mix(in srgb, var(--app-primary) 8%, white);
+  --app-primary-soft-strong: color-mix(in srgb, var(--app-primary) 16%, white);
+}
+
+// 4) Global resets
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background: #f3f4f6;
+}
+
+
+/* === Navbar: icon buttons limpios === */
+/* Afecta solo a los botones icono del toolbar */
+.app-toolbar button[mat-icon-button] {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.app-toolbar button[mat-icon-button] .mat-icon {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.app-toolbar button[mat-icon-button]:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+

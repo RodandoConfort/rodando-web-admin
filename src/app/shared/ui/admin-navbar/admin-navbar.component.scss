@@ -1,0 +1,155 @@
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  min-height: 64px;
+
+  background-color: #f5f5f5;
+  box-shadow: none;
+  border-bottom: none;
+  color: var(--app-on-surface);
+}
+
+/* IZQUIERDA */
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #0000008a;
+}
+
+/* TODOS LOS ICON BUTTONS (menú + derecha) SIN BORDES/CUADROS */
+.menu-button.mat-mdc-icon-button,
+.toolbar-icon-button.mat-mdc-icon-button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.menu-button .mat-icon,
+.toolbar-icon-button .mat-icon {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.54);
+   cursor: pointer;
+}
+
+/* efecto hover muy suave */
+.menu-button:hover,
+.toolbar-icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* SEPARADOR FLEX */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* BUSCADOR: línea + círculo blanco con lupa */
+.toolbar-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 260px;
+  max-width: 360px;
+  margin-right: 16px;
+}
+
+.toolbar-search-input {
+  width: 100%;
+  height: 32px;
+  padding: 0 46px 2px 0;
+
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.26); // línea gris
+}
+
+.toolbar-search-input::placeholder {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+/* botón circular blanco superpuesto al final de la línea */
+.toolbar-search-button {
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none !important;
+  // background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+
+  padding: 0;
+}
+
+.toolbar-search-button mat-icon {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/* ICONOS DERECHA (apps, bell, user) */
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* badge rojo simple para notificaciones */
+.toolbar-icon-button--notif {
+  position: relative;
+}
+
+.toolbar-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  min-width: 14px;
+  height: 14px;
+  padding: 0 3px;
+
+  border-radius: 7px;
+  background-color: #f44336;
+  color: #ffffff;
+  font-size: 0.6rem;
+  line-height: 14px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .app-toolbar {
+    padding: 0 12px;
+  }
+
+  .toolbar-title {
+    display: none;
+  }
+
+  .toolbar-search-wrapper {
+    display: none; // para móvil la barra suele ocultar search
+  }
+}

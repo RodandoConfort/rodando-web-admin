@@ -1,0 +1,40 @@
+.app-footer {
+  padding: 12px 24px 20px;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  box-sizing: border-box;
+
+  /* mismo tono que el fondo, o transparente si hay gradiente */
+  background: transparent;          // 👈 deja ver el background del layout
+  color: rgba(15, 23, 42, 0.6);
+
+  /* sin sombra ni bordes */
+  box-shadow: none;
+  border-top: none;
+}
+
+.footer-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

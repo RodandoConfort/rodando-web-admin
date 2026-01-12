@@ -1,0 +1,120 @@
+:host {
+  display: block;
+}
+
+/* Card compacta */
+.data-table-card {
+  padding: 0.75rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  background-color: #ffffff;
+}
+
+/* Título dentro de la card */
+.data-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.data-table-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0000008a;
+}
+
+.data-table-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Wrapper tabla + paginador */
+.data-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* contenedor scroll horizontal */
+.data-table-container {
+  overflow-x: auto;
+}
+
+/* Tabla base */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* HEADER gris suave */
+.data-table ::ng-deep .mat-mdc-header-row {
+  background-color: #f3f4f6;
+}
+
+.data-table ::ng-deep .mat-mdc-header-cell {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* celdas */
+.data-table ::ng-deep .mat-mdc-cell {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.875rem;
+  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* última fila sin borde */
+.data-table ::ng-deep .mat-mdc-row:last-child .mat-mdc-cell {
+  border-bottom: none;
+}
+
+/* Checkbox column más estrecha */
+.select-header,
+.select-cell {
+  width: 3rem;
+}
+
+/* Hover usando el color suave del tema */
+.data-table-row:hover {
+  background-color: var(--app-primary-soft, #eef2ff);
+  cursor: pointer;
+}
+
+/* Alineaciones extra */
+.data-table ::ng-deep .mat-mdc-cell.text-right,
+.data-table ::ng-deep .mat-mdc-header-cell.text-right {
+  text-align: right;
+}
+
+.data-table ::ng-deep .mat-mdc-cell.text-center,
+.data-table ::ng-deep .mat-mdc-header-cell.text-center {
+  text-align: center;
+}
+
+/* Paginador integrado: compacto */
+.data-table-paginator {
+  margin-top: 0.25rem;
+}
+
+.data-table-paginator ::ng-deep .mat-mdc-paginator {
+  background: transparent;
+  padding: 0 0.25rem;
+}
+
+.data-table-paginator ::ng-deep .mat-mdc-paginator-range-label,
+.data-table-paginator ::ng-deep .mat-mdc-paginator-page-size-label {
+  font-size: 0.75rem;
+}
+
+.data-table-paginator ::ng-deep .mat-mdc-select-trigger {
+  font-size: 0.75rem;
+}

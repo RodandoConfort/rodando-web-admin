@@ -1,0 +1,256 @@
+:host {
+  display: block;
+}
+
+/* colores base */
+$positive: #22c55e;
+$negative: #ef4444;
+$card-radius: 18px;
+
+.dashboard-root {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* FILA SUPERIOR: KPIs */
+.dashboard-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.kpi-card {
+  border-radius: $card-radius;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  padding: 0;
+}
+
+.kpi-card-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+}
+
+.kpi-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kpi-label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.kpi-value {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.kpi-change {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.kpi-change--positive {
+  color: $positive;
+}
+
+.kpi-change--negative {
+  color: $negative;
+}
+
+/* badge oscuro flotando en cada KPI */
+.kpi-icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
+}
+
+.kpi-icon-badge mat-icon {
+  color: #ffffff;
+}
+
+/* FILA INFERIOR: TARJETAS GRANDES */
+.dashboard-charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.chart-card {
+  border-radius: $card-radius;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  padding: 0;
+}
+
+.chart-header {
+  padding: 18px 20px 0;
+}
+
+.chart-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.chart-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.chart-highlight {
+  color: $positive;
+  font-weight: 600;
+}
+
+/* contenido del pseudo-gráfico */
+.chart-body {
+  padding: 12px 20px 12px;
+}
+
+.chart {
+  position: relative;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 16px 16px 26px;
+}
+
+/* Ejes simples */
+.chart-grid-y {
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: rgba(15, 23, 42, 0.5);
+}
+
+/* BARRAS */
+.chart-bars {
+  margin-left: 36px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: flex-end;
+  gap: 6px;
+  height: 120px;
+}
+
+.chart-bar {
+  border-radius: 4px 4px 0 0;
+  background: $positive;
+}
+
+.chart-bar.bar-1 { height: 55%; }
+.chart-bar.bar-2 { height: 50%; }
+.chart-bar.bar-3 { height: 35%; }
+.chart-bar.bar-4 { height: 45%; }
+.chart-bar.bar-5 { height: 60%; }
+.chart-bar.bar-6 { height: 70%; }
+.chart-bar.bar-7 { height: 85%; }
+
+/* Etiquetas eje X */
+.chart-x-labels {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+/* Línea simple con puntos (fake) */
+.chart--line {
+  padding: 20px 20px 28px;
+}
+
+.chart-line-bg {
+  position: absolute;
+  inset: 18px 16px 36px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.chart-line-path {
+  position: relative;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.chart-line-path .point {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $positive;
+  position: relative;
+}
+
+.chart-line-path .point::before {
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  background: $positive;
+}
+
+/* distintas alturas para simular la curva */
+.point.p1 { transform: translateY(-10px); }
+.point.p2 { transform: translateY(-30px); }
+.point.p3 { transform: translateY(-5px); }
+.point.p4 { transform: translateY(-25px); }
+.point.p5 { transform: translateY(-15px); }
+.point.p6 { transform: translateY(-40px); }
+.point.p7 { transform: translateY(-20px); }
+.point.p8 { transform: translateY(-30px); }
+
+/* la primera no dibuja línea hacia atrás */
+.point.p1::before {
+  display: none;
+}
+
+/* etiquetas inclinadas para la tercera card */
+.chart--tilted .chart-x-labels--tilted span {
+  transform: rotate(-30deg);
+  transform-origin: left top;
+}
+
+/* footer */
+.chart-footer {
+  padding: 10px 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.chart-footer mat-icon {
+  font-size: 18px;
+}
+
+/* Responsive pequeños ajustes */
+@media (max-width: 600px) {
+  .dashboard-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-charts {
+    grid-template-columns: 1fr;
+  }
+}

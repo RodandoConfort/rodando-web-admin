@@ -1,0 +1,35 @@
+<mat-sidenav-container class="admin-shell">
+
+  <!-- SIDEBAR -->
+  <mat-sidenav
+    class="admin-sidenav"
+    [mode]="uiStore.isHandset() ? 'over' : 'side'"
+    [opened]="uiStore.sidebarOpened()"
+  >
+    <app-admin-sidebar></app-admin-sidebar>
+  </mat-sidenav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <mat-sidenav-content class="admin-content-root">
+    <div class="admin-main">
+      <!-- NAVBAR -->
+      <app-admin-navbar></app-admin-navbar>
+
+      <!-- CONTENIDO SCROLLEABLE -->
+      <div class="admin-content-wrapper">
+        <!-- <header class="admin-page-header">
+          <div>
+            <h1 class="admin-page-title">Page Title</h1>
+          </div>
+        </header> -->
+
+        <main class="admin-content" role="main">
+          <router-outlet></router-outlet>
+        </main>
+      </div>
+
+      <!-- FOOTER -->
+      <app-admin-footer></app-admin-footer>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

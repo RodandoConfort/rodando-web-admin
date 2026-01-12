@@ -1,0 +1,69 @@
+<div class="sidebar-root">
+  <!-- CABECERA / BRAND -->
+  <mat-toolbar class="sidenav-header">
+    <span class="sidenav-title">RODANDO ADMIN</span>
+  </mat-toolbar>
+  <div class="sidenav-separator"></div>
+
+  <!-- MENÚ -->
+  <mat-nav-list class="nav-list">
+    @for (item of navItems; track item.label) {
+      @if (!item.children) {
+        <!-- Ítems simples -->
+        <a
+          mat-list-item
+          [routerLink]="item.link"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item"
+          (click)="onNavItemClick()"
+        >
+          <mat-icon matListItemIcon aria-hidden="true">
+            {{ item.icon }}
+          </mat-icon>
+          <span matListItemTitle>{{ item.label }}</span>
+        </a>
+      } @else {
+        <!-- Grupo con submenú -->
+       <button
+  mat-list-item
+  type="button"
+  class="nav-item nav-item--group"
+  (click)="toggleTransport($event)"
+>
+  <mat-icon matListItemIcon aria-hidden="true">
+    {{ item.icon }}
+  </mat-icon>
+
+  <span matListItemTitle>{{ item.label }}</span>
+
+  <!-- meta alineado a la derecha -->
+  <span matListItemMeta class="nav-item-expand-container">
+    <mat-icon class="nav-item-expand-icon">
+      {{ transportOpen() ? 'expand_less' : 'expand_more' }}
+    </mat-icon>
+  </span>
+</button>
+
+        @if (transportOpen()) {
+          <div class="submenu">
+            @for (child of item.children; track child.label) {
+              <a
+                mat-list-item
+                [routerLink]="child.link"
+                routerLinkActive="active-link"
+                class="nav-item submenu-item"
+                (click)="onNavItemClick()"
+              >
+                <mat-icon matListItemIcon aria-hidden="true">
+                  {{ child.icon }}
+                </mat-icon>
+                <span matListItemTitle>{{ child.label }}</span>
+              </a>
+            }
+          </div>
+        }
+      }
+    }
+  </mat-nav-list>
+</div>

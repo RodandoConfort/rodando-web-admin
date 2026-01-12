@@ -1,0 +1,14 @@
+<app-data-table
+  title="Listado de categorías"
+  [actions]="actions"
+  [data]="items()"
+  [columns]="columns"
+  [enableSelection]="true"
+  [enablePagination]="true"
+  [length]="total()"
+  [pageIndex]="pageIndex()"
+  [pageSize]="pageSize()"
+  (rowClick)="onRowClick($event)"
+  (selectionChange)="onSelectionChange($event)"
+  (pageChange)="onPageChange($event)">
+</app-data-table>

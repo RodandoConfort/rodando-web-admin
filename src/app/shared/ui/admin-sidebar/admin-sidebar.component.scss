@@ -1,0 +1,161 @@
+/* Morado activo usando el tema global */
+:root {
+  /* sombra para el item activo */
+  --sidebar-active-shadow: 0 12px 20px -10px rgba(0, 0, 0, 0.35);
+}
+
+.sidebar-root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  /* Fondo tipo Material Dashboard */
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    color-mix(in srgb, var(--app-primary) 4%, #f4f5f7) 45%,
+    color-mix(in srgb, var(--app-primary) 8%, #e7ebf3) 100%
+  );
+
+  /* sombra a la derecha del sidebar */
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Cabecera tipo "CREATIVE TIM" */
+.sidenav-header {
+  height: 64px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  box-shadow: none;
+}
+
+.sidenav-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* Línea fina bajo el título */
+.sidenav-separator {
+  height: 1px;
+  margin: 0 16px 8px;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* Lista */
+.nav-list {
+  flex: 1 1 auto;
+  padding: 4px 12px 16px;
+}
+
+/* Ítems base */
+.nav-item {
+  border-radius: 4px;
+  margin: 2px 0;
+}
+
+/* Angular Material list item */
+.nav-list .mat-mdc-list-item {
+  height: 44px;
+  border-radius: 4px;
+  padding-inline: 12px;
+
+  color: rgba(0, 0, 0, 0.54); // texto gris normal
+  font-size: 0.9rem;
+}
+
+.nav-list .mat-mdc-list-item .mat-icon {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+/* Grupo con submenú */
+.nav-item--group {
+  font-weight: 600;
+}
+
+.nav-item-expand-icon {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.38); // flecha visible
+  letter-spacing: normal;
+}
+
+.nav-item--group:hover .nav-item-expand-icon {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Submenú (children) */
+.submenu {
+  padding-left: 18px;
+  margin-top: 2px;
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.submenu-item {
+  font-size: 0.86rem;
+}
+
+/* Hover sutil para todos */
+.nav-list .mat-mdc-list-item:hover {
+  background-color: color-mix(in srgb, var(--app-primary) 6%, #ffffff);
+}
+
+/* Ítem activo: pill morado y TEXTO/ICONOS BLANCOS */
+.nav-list .mat-mdc-list-item.active-link {
+  background-color: var(--app-primary);
+  box-shadow: var(--sidebar-active-shadow);
+  border-radius: 4px;
+}
+
+/* fuerza texto blanco dentro del item activo */
+.nav-list .mat-mdc-list-item.active-link,
+.nav-list .mat-mdc-list-item.active-link .mdc-list-item__primary-text,
+.nav-list .mat-mdc-list-item.active-link .mat-icon {
+  color: var(--app-on-primary); // normalmente blanco en tu tema
+}
+
+/* Quitar subrayado a <a> */
+a.mat-mdc-list-item {
+  text-decoration: none;
+}
+
+/* Pequeño ajuste responsive */
+@media (max-width: 768px) {
+  .sidenav-header {
+    justify-content: flex-start;
+    padding-left: 16px;
+  }
+
+  .sidenav-title {
+    font-size: 0.7rem;
+  }
+}
+
+
+.nav-item-expand-container {
+  display: flex;
+  align-items: center;
+}
+
+/* icono de la flecha */
+.nav-item-expand-icon {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+/* botón del grupo: sin borde negro ni outline feo */
+.nav-item--group.mat-mdc-list-item {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-item--group.mat-mdc-list-item:focus,
+.nav-item--group.mat-mdc-list-item:focus-visible {
+  outline: none;
+}

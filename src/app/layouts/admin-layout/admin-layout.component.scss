@@ -1,0 +1,96 @@
+.admin-shell {
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.admin-sidenav {
+  width: 260px;
+  box-sizing: border-box;
+  border-right: none;
+  padding: 0;
+  background: #ffffff;
+  box-shadow: 2px 0 10px rgba(15, 23, 42, 0.06);
+}
+
+/* Zona de contenido (lo que está a la derecha del sidebar) */
+.admin-content-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f3f4f6;
+}
+
+/* Columna principal con navbar arriba, footer abajo y contenido en medio */
+.admin-main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper de contenido (debajo del navbar) */
+.admin-content-wrapper {
+  flex: 1 1 auto;
+  padding: 24px 24px 16px;
+  box-sizing: border-box;
+  overflow: auto; /* solo el contenido scrollea, no el navbar */
+}
+
+/* Encabezado tipo Material Dashboard */
+.admin-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.admin-page-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.admin-page-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+/* Zona donde se pintan las páginas (dashboard, usuarios, etc.) */
+.admin-content {
+  max-width: 1180px;
+  margin: 0 auto 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Utilidades generales para grids tipo dashboard */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.dashboard-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-sidenav {
+    width: 240px;
+  }
+
+  .admin-content-wrapper {
+    padding: 16px 12px 12px;
+  }
+
+  .admin-content {
+    margin-bottom: 12px;
+  }
+
+  .admin-page-title {
+    font-size: 1.25rem;
+  }
+}

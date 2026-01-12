@@ -1,0 +1,189 @@
+<section class="dashboard-root">
+  <!-- FILA SUPERIOR: KPIs -->
+  <div class="dashboard-kpis">
+    <!-- KPI 1 -->
+    <mat-card class="kpi-card">
+      <div class="kpi-card-inner">
+        <div class="kpi-text">
+          <p class="kpi-label">Today's Money</p>
+          <p class="kpi-value">$53k</p>
+          <p class="kpi-change kpi-change--positive">+55% than last week</p>
+        </div>
+        <div class="kpi-icon-badge">
+          <mat-icon>work_outline</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+
+    <!-- KPI 2 -->
+    <mat-card class="kpi-card">
+      <div class="kpi-card-inner">
+        <div class="kpi-text">
+          <p class="kpi-label">Today's Users</p>
+          <p class="kpi-value">2300</p>
+          <p class="kpi-change kpi-change--positive">+3% than last month</p>
+        </div>
+        <div class="kpi-icon-badge">
+          <mat-icon>person_outline</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+
+    <!-- KPI 3 -->
+    <mat-card class="kpi-card">
+      <div class="kpi-card-inner">
+        <div class="kpi-text">
+          <p class="kpi-label">Ads Views</p>
+          <p class="kpi-value">3,462</p>
+          <p class="kpi-change kpi-change--negative">-2% than yesterday</p>
+        </div>
+        <div class="kpi-icon-badge">
+          <mat-icon>bar_chart</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+
+    <!-- KPI 4 -->
+    <mat-card class="kpi-card">
+      <div class="kpi-card-inner">
+        <div class="kpi-text">
+          <p class="kpi-label">Sales</p>
+          <p class="kpi-value">$103,430</p>
+          <p class="kpi-change kpi-change--positive">+5% than yesterday</p>
+        </div>
+        <div class="kpi-icon-badge">
+          <mat-icon>shopping_bag</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- FILA INFERIOR: TARJETAS GRANDES -->
+  <div class="dashboard-charts">
+    <!-- Card 1 -->
+    <mat-card class="chart-card">
+      <div class="chart-header">
+        <div>
+          <h3 class="chart-title">Website Views</h3>
+          <p class="chart-subtitle">Last Campaign Performance</p>
+        </div>
+      </div>
+
+      <div class="chart-body">
+        <div class="chart chart--bars">
+          <div class="chart-grid-y">
+            <span>100</span>
+            <span>50</span>
+            <span>0</span>
+          </div>
+          <div class="chart-bars">
+            <div class="chart-bar bar-1"></div>
+            <div class="chart-bar bar-2"></div>
+            <div class="chart-bar bar-3"></div>
+            <div class="chart-bar bar-4"></div>
+            <div class="chart-bar bar-5"></div>
+            <div class="chart-bar bar-6"></div>
+            <div class="chart-bar bar-7"></div>
+          </div>
+          <div class="chart-x-labels">
+            <span>M</span>
+            <span>T</span>
+            <span>W</span>
+            <span>T</span>
+            <span>F</span>
+            <span>S</span>
+            <span>S</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-footer">
+        <mat-icon>schedule</mat-icon>
+        <span>campaign sent 2 days ago</span>
+      </div>
+    </mat-card>
+
+    <!-- Card 2 -->
+    <mat-card class="chart-card">
+      <div class="chart-header">
+        <div>
+          <h3 class="chart-title">Daily Sales</h3>
+          <p class="chart-subtitle">
+            <span class="chart-highlight">(+15%)</span> increase in today sales.
+          </p>
+        </div>
+      </div>
+
+      <div class="chart-body">
+        <div class="chart chart--line">
+          <div class="chart-line-bg"></div>
+          <div class="chart-line-path">
+            <span class="point p1"></span>
+            <span class="point p2"></span>
+            <span class="point p3"></span>
+            <span class="point p4"></span>
+            <span class="point p5"></span>
+            <span class="point p6"></span>
+            <span class="point p7"></span>
+            <span class="point p8"></span>
+          </div>
+          <div class="chart-x-labels">
+            <span>J</span>
+            <span>F</span>
+            <span>M</span>
+            <span>A</span>
+            <span>M</span>
+            <span>J</span>
+            <span>J</span>
+            <span>A</span>
+            <span>S</span>
+            <span>O</span>
+            <span>N</span>
+            <span>D</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-footer">
+        <mat-icon>update</mat-icon>
+        <span>updated 4 min ago</span>
+      </div>
+    </mat-card>
+
+    <!-- Card 3 -->
+    <mat-card class="chart-card">
+      <div class="chart-header">
+        <div>
+          <h3 class="chart-title">Completed Tasks</h3>
+          <p class="chart-subtitle">Last Campaign Performance</p>
+        </div>
+      </div>
+
+      <div class="chart-body">
+        <div class="chart chart--line chart--tilted">
+          <div class="chart-line-bg"></div>
+          <div class="chart-line-path">
+            <span class="point p1"></span>
+            <span class="point p2"></span>
+            <span class="point p3"></span>
+            <span class="point p4"></span>
+            <span class="point p5"></span>
+            <span class="point p6"></span>
+          </div>
+          <div class="chart-x-labels chart-x-labels--tilted">
+            <span>Apr</span>
+            <span>Jun</span>
+            <span>Aug</span>
+            <span>Oct</span>
+            <span>Dec</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-footer">
+        <mat-icon>check_circle_outline</mat-icon>
+        <span>just updated</span>
+      </div>
+    </mat-card>
+  </div>
+</section>
